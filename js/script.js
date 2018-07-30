@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    
-    //Add Task Event
+
+    //Add Task after Click ADD Button 
     $("#add").click(function(){
         var taskValue = $("#taskValue").val();
         if (taskValue !== ""){
@@ -8,12 +8,13 @@ $(document).ready(function(){
             
             //Clear input field
             ClearInputField();
+        }
+    });
 
-            //Delete Task Event
-            $(".deleteBtn").click(function(){
-                $(this).parent().remove();
-                }
-            );
+    //Add Task after Press ENTER
+    $("#taskValue").keyup(function(event){
+        if (event.keyCode === 13){
+            $("#add").click();        
         }
     });
 });
@@ -24,7 +25,18 @@ function AddTask(task){
     });
     
     //Add "Delete" Button to item
-    var delBtn = $("<button class='deleteBtn'></button>").text("X");
+    var delBtn = $("<button class='deleteBtn'></button>").text("X").click(function(){
+        $(this).parent().text("Deleting...").animate({
+                width: "0%"
+                }, 
+                1000, 
+                function(){
+                    $(this).remove();
+                }
+            );
+        }
+    );
+
     item.append(delBtn);
 
     $("#taskList").append(item);
