@@ -1,4 +1,4 @@
-$("document").ready(function(){
+$(document).ready(function(){
     
     //Add Task Event
     $("#add").click(function(){
@@ -19,7 +19,9 @@ $("document").ready(function(){
 });
 
 function AddTask(task){
-    var item = $("<li></li>").text(task);
+    var item = $("<li></li>").text(task).click(function(){
+        $(this).toggleClass("taskDone");
+    });
     
     //Add "Delete" Button to item
     var delBtn = $("<button class='deleteBtn'></button>").text("X");
