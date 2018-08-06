@@ -1,63 +1,78 @@
 * {
-  margin: 0;
-  padding: 0; }
+  box-sizing: border-box; }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
+  background-color: #242323;
   color: white;
-  text-align: center;
-  font-size: 20px; }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-@media only screen and (min-width: 768px) {
-  #container {
-    width: 50%;
-    margin: 0 auto; } }
+#container {
+  width: 98%;
+  margin: 1% 1%; }
 
 #container h1 {
+  text-align: center;
+  font-size: 2em;
   color: rgba(39, 192, 192, 0.8); }
 
 #inputSection {
   width: 100%;
+  margin-top: 4%; }
+
+#inputSection input[type=text] {
+  width: 90%;
+  float: left;
   height: 30px;
-  margin-bottom: 20px; }
-  #inputSection input[type=text] {
-    width: 89%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    float: left; }
+  border: none;
+  padding: 0 1%; }
 
 #add {
   width: 10%;
+  height: 30px;
   background-color: rgba(39, 192, 192, 0.8);
+  font-size: 1.5em;
   margin: 0;
   border: none;
-  font-size: 30px;
-  vertical-align: middle;
-  display: inline-block; }
+  display: block; }
+
+#add:hover {
+  background-color: rgba(39, 192, 192, 0.7); }
 
 #taskList {
+  width: 100%;
   list-style: none;
-  padding-left: 0; }
-  #taskList li {
-    background-color: rgba(39, 192, 192, 0.8);
-    padding: 5px;
-    margin-bottom: 5px;
-    position: relative; }
+  margin-top: 4%; }
+
+#taskList li {
+  width: 100%;
+  min-height: 30px;
+  background-color: rgba(39, 192, 192, 0.8);
+  margin-bottom: 1%;
+  position: relative;
+  display: block;
+  padding: 1% 10% 1% 2%; }
 
 .deleteBtn {
   border: none;
-  color: red;
+  color: #d14242;
   background-color: transparent;
   cursor: pointer;
   float: right;
-  font-size: 30px;
+  font-size: 1.5em;
   position: absolute;
-  right: 5px;
-  top: 0;
-  text-align: center; }
+  right: 3px;
+  top: 2px;
+  text-align: center;
+  display: block; }
+
+.deleteBtn:hover {
+  font-size: 1.7em;
+  color: #a71919; }
 
 .taskDone {
   background-color: #817a7a !important; }
+
+@media only screen and (min-width: 650px) {
+  #container {
+    width: 50%;
+    margin: 0 auto; } }

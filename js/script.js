@@ -20,16 +20,19 @@ $(document).ready(function(){
 });
 
 function AddTask(task){
-    var item = $("<li></li>").text(task).click(function(){
+    var item = $("<li></li>").text(task).click(function(e){
         $(this).toggleClass("taskDone");
+        // e.stopPropagation();
     });
     
     //Add "Delete" Button to item
-    var delBtn = $("<button class='deleteBtn'></button>").text("X").click(function(){
+    var delBtn = $("<button class='deleteBtn'></button>").text("X").click(function(e){
+        //stopPropation wyłącza event Click u rodzica("li")
+        e.stopPropagation();
         $(this).parent().text("Deleting...").animate({
                 width: "0%"
                 }, 
-                1000, 
+                700, 
                 function(){
                     $(this).remove();
                 }
